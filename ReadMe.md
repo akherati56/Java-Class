@@ -19,5 +19,3 @@
 Decimal (Fixed-Point) Types
     
     avoiding issues with floating-point inaccuracies.
-
-
