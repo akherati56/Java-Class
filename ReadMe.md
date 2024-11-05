@@ -1,6 +1,6 @@
 ## session 1
 ### list of websites to download jdk 
-2. oracle
+1. oracle
 2. openjdk
 3. Adoptium
 4. Amazon Corretto
