@@ -1,4 +1,4 @@
-package Switch;
+package Session1;
 
 public class YieldSwitch {
     public String detect_gender(String name){

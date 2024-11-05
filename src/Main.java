@@ -1,9 +1,9 @@
-import Bank.BankAccount;
-import Switch.ArrowSwitch;
-import Switch.YieldSwitch;
-import University.Grade;
-import University.Student;
-import Math.Matrix;
+import Session1.BankAccount;
+import Session1.ArrowSwitch;
+import Session1.YieldSwitch;
+import Session1.Grade;
+import Session1.Student;
+import Session1.Matrix;
 
 import java.util.ArrayList;
 
@@ -30,7 +30,7 @@ public class Main {
         println("\n");
     }
 
-    public static void main(String[] args) {
+    public static void seesion_1(){
         // Convert Grades from 0-100 format into A-F format
         Grade g = new Grade();
         println(g.convert_grades(99));
@@ -67,6 +67,9 @@ public class Main {
         bk.withdraw(25.5);
         println(bk.info());
         println("\nGet Transaction History Separately: " + bk.GetLastTransaction());
+    }
 
+    public static void main(String[] args) {
+        seesion_1();
     }
 }

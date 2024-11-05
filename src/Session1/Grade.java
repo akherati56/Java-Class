@@ -1,4 +1,4 @@
-package University;
+package Session1;
 
 public class Grade {
     public String convert_grades(int grade){
