@@ -1,6 +1,5 @@
 ## session 1
 ### list of websites to download jdk 
-1. oracle
 2. openjdk
 3. Adoptium
 4. Amazon Corretto
@@ -19,3 +18,5 @@
 Decimal (Fixed-Point) Types
     
     avoiding issues with floating-point inaccuracies.
+
+
