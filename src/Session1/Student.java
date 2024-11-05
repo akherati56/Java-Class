@@ -1,4 +1,4 @@
-package University;
+package Session1;
 
 public class Student {
     private static int counter = 0;
