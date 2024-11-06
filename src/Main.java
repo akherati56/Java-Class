@@ -4,8 +4,10 @@ import Session1.YieldSwitch;
 import Session1.Grade;
 import Session1.Student;
 import Session1.Matrix;
+import Session2.DuplicateDetector;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static void println(String Message){
@@ -30,7 +32,7 @@ public class Main {
         println("\n");
     }
 
-    public static void seesion_1(){
+    public static void session_1(){
         // Convert Grades from 0-100 format into A-F format
         Grade g = new Grade();
         println(g.convert_grades(99));
@@ -69,7 +71,18 @@ public class Main {
         println("\nGet Transaction History Separately: " + bk.GetLastTransaction());
     }
 
+    public static void session_2(){
+        // Duplicate Detector
+        DuplicateDetector d = new DuplicateDetector();
+        ArrayList<String> duplicateStrings = d.findDuplicateStrings();
+        println(duplicateStrings);
+
+        //
+    }
+
     public static void main(String[] args) {
-        seesion_1();
+        session_1();
+
+        session_2();
     }
 }
