@@ -5,6 +5,8 @@ import Session1.Grade;
 import Session1.Student;
 import Session1.Matrix;
 import Session2.DuplicateDetector;
+import Session2.Manager;
+import Session2.Teacher;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -77,11 +79,26 @@ public class Main {
         ArrayList<String> duplicateStrings = d.findDuplicateStrings();
         println(duplicateStrings);
 
-        //
+        // Person abstract class with notify and awake methods:
+        Manager m = new Manager();
+        m.notification();
+        m.awake();
+
+        Session2.Student st = new Session2.Student();
+        st.notification();
+        st.awake();
+
+        Teacher t = new Teacher();
+        t.notification();
+        t.awake();
+
+
+
+
     }
 
     public static void main(String[] args) {
-        session_1();
+//        session_1();
 
         session_2();
     }
