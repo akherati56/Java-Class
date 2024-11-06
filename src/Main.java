@@ -5,51 +5,33 @@ import Session1.Grade;
 import Session1.Student;
 import Session1.Matrix;
 import Session2.*;
+import Tasks.DuplicateDetectorTask;
+import lib.Myprintln;
+import lib.Myprintln.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
-    public static void println(String Message){
-        System.out.println(Message);
-    }
-
-    public static void println(int Message){
-        System.out.println(Message);
-    }
-
-    public static void println(ArrayList<String> Message){
-        System.out.println(Message);
-    }
-
-    public static void println(int[][] matrix){
-        for (int[] ints : matrix) {
-            System.out.print("\n");
-            for (int anInt : ints) {
-                System.out.print(anInt + " ");
-            }
-        }
-        println("\n");
-    }
 
     public static void session_1(){
         // Convert Grades from 0-100 format into A-F format
         Grade g = new Grade();
-        println(g.convert_grades(99));
+        Myprintln.println(g.convert_grades(99));
 
         // arrow switch example to detect gender base on name given
         ArrowSwitch As = new ArrowSwitch();
         String gender = As.detect_gender("ali");
-        println(gender);
+        Myprintln.println(gender);
 
         // yield switch example
         YieldSwitch Ys = new YieldSwitch();
-        println(Ys.detect_gender("mary"));
+        Myprintln.println(Ys.detect_gender("mary"));
 
         // create Matrix
         Matrix m = new Matrix(5);
         int[][] mat = m.getMatrix();
-        println(mat);
+        Myprintln.println(mat);
 
         // array of Students class
         int array_size = 10;
@@ -60,46 +42,60 @@ public class Main {
         }
 
         for (int i = 0; i < array_size; i++) {
-            println("id: " + st[i].getId() + "\tGrade: " + st[i].getGrade() + "\tGrade: " + g.convert_grades(st[i].getGrade()));
+            Myprintln.println("id: " + st[i].getId() + "\tGrade: " + st[i].getGrade() + "\tGrade: " + g.convert_grades(st[i].getGrade()));
         }
 
         // Bank Account
         BankAccount bk = new BankAccount(5660.0);
         bk.deposit(25.5);
         bk.withdraw(25.5);
-        println(bk.info());
-        println("\nGet Transaction History Separately: " + bk.GetLastTransaction());
+        Myprintln.println(bk.info());
+        Myprintln.println("\nGet Transaction History Separately: " + bk.GetLastTransaction());
     }
 
     public static void session_2(){
         // Duplicate Detector
-        DuplicateDetector d = new DuplicateDetector();
-        ArrayList<String> duplicateStrings = d.findDuplicateStrings();
-        println(duplicateStrings);
+        DuplicateDetectorTask ddt = new DuplicateDetectorTask();
+        Thread ddtt = new Thread(ddt);
+        ddtt.start();
 
         // Person abstract class with notify and awake methods:
-        Manager m = new Manager();
-        m.notification();
-        m.awake();
+        Thread thread = new Thread(() -> {
+            Manager m = new Manager();
+            m.notification();
+            m.awake();
+        });
+        thread.start();
 
-        Session2.Student st = new Session2.Student();
-        st.notification();
-        st.awake();
+        thread = new Thread(() -> {
+            Session2.Student st = new Session2.Student();
+            st.notification();
+            st.awake();
+        });
+        thread.start();
 
-        Teacher t = new Teacher();
-        t.notification();
-        t.awake();
+        thread = new Thread(() -> {
+            Teacher t = new Teacher();
+            t.notification();
+            t.awake();
+        });
+        thread.start();
 
         // Shape abstract class
-        Shape[] shapes = new Shape[2];
-        shapes[0] = new Circle();
-        shapes[1] = new Square();
+        thread = new Thread(() -> {
 
-        AreaCalculator<Shape> a = new AreaCalculator<>();
-        a.add(shapes[0]);
-        a.add(shapes[1]);
+            Shape[] shapes = new Shape[2];
+            shapes[0] = new Circle();
+            shapes[1] = new Square();
 
-        a.area();
+            AreaCalculator<Shape> a = new AreaCalculator<>();
+            a.add(shapes[0]);
+            a.add(shapes[1]);
+
+            a.area();
+        });
+        thread.start();
+
 
 
 
