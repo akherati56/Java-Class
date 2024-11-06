@@ -4,9 +4,7 @@ import Session1.YieldSwitch;
 import Session1.Grade;
 import Session1.Student;
 import Session1.Matrix;
-import Session2.DuplicateDetector;
-import Session2.Manager;
-import Session2.Teacher;
+import Session2.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -92,6 +90,16 @@ public class Main {
         t.notification();
         t.awake();
 
+        // Shape abstract class
+        Shape[] shapes = new Shape[2];
+        shapes[0] = new Circle();
+        shapes[1] = new Square();
+
+        AreaCalculator<Shape> a = new AreaCalculator<>();
+        a.add(shapes[0]);
+        a.add(shapes[1]);
+
+        a.area();
 
 
 
