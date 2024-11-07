@@ -5,15 +5,8 @@ import Session1.Grade;
 import Session1.Student;
 import Session1.Matrix;
 import Session2.*;
-import Session2_1.Graphic;
-import Session2_1.Sort_Grades;
 import Tasks.DuplicateDetectorTask;
 import lib.Myprintln;
-import lib.Myprintln.*;
-
-import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Main {
 
@@ -118,20 +111,5 @@ public class Main {
 //            g.CreateWindow();
 //        });
 //        thread.start();
-
-        Thread thread = new Thread(() -> {
-            Sort_Grades s = new Sort_Grades();
-            JFrame frame = new JFrame("My App"); // Window title
-            frame.setContentPane(s.getMainPanel()); // Add the form's main panel
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack(); // Resize the window to fit the components
-            frame.setVisible(true); // Show the window
-        });
-        thread.start();
-
-
-
-
-
     }
 }

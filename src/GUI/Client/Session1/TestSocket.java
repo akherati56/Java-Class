@@ -1,28 +1,26 @@
-package Session2_1;
+package GUI.Client.Session1;
 
-import Session1.Grade;
-import lib.Myprintln;
+import Socket.ClientSocket;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Sort_Grades {
+public class TestSocket {
     private JPanel panel1;
     private JButton button1;
+    private JTextField Name;
+    private JTabbedPane tabbedPane1;
 
-    public Sort_Grades() {
+    public TestSocket() {
         button1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-
-                // Convert Grades from 0-100 format into A-F format
-                Grade g = new Grade();
-                Myprintln.println(g.convert_grades(99));
-
-                System.out.println(e.getX());
+                Thread serverThread = new Thread(() -> {
+                    ClientSocket.SendhelloToServer(Name.getText());
+                });
+                serverThread.start();
             }
         });
     }

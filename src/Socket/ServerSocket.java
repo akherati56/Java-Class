@@ -1,12 +1,13 @@
-package Session2_2;
+package Socket;
 
 import java.io.*;
-        import java.net.*;
+import java.net.Socket;
 
-public class Server {
-    public static void main(String[] args) {
+public class ServerSocket {
+
+    public static void ListenToClients(){
         int port = 1234;
-        try (ServerSocket serverSocket = new ServerSocket(port)) {
+        try (java.net.ServerSocket serverSocket = new java.net.ServerSocket(port)) {
             System.out.println("Server is listening on port " + port);
 
             Socket socket = serverSocket.accept();
