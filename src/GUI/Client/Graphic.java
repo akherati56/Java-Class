@@ -17,6 +17,7 @@ public class Graphic {
     private JTabbedPane tabbedPane1;
     private JPanel panel1;
     private JButton sendMessageToServerButton;
+    private JTextArea mainCommandsARROWSWITCHBANKACCOUNTTextArea;
     private final JFrame frame;
     private ArrayList<JFrame> window;
     private final Map<JButton, GInterface> Listeners = new HashMap<>();
