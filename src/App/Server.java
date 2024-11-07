@@ -1,9 +1,9 @@
 package App;
 
-import Socket.ServerSocket;
+import Socket.SSocket;
 
 public class Server {
     public static void main(String[] args) {
-        ServerSocket.ListenToClients();
+        SSocket.ListenToClients();
     }
 }

@@ -113,9 +113,9 @@ public class Main {
 //        thread.start();
 
         // Convert Grades from 0-100 format into A-F format
-        Grade g = new Grade(new int[] {10,20,52,13,2,1,9});
-        Myprintln.println( g.sort());
-        Myprintln.println( "\n");
-        Myprintln.println( g.max());
+//        Grade g = new Grade(new int[] {10,20,52,13,2,1,9});
+//        Myprintln.println( g.sort());
+//        Myprintln.println( "\n");
+//        Myprintln.println( g.max());
     }
 }

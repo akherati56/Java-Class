@@ -10,8 +10,9 @@ import java.awt.event.MouseEvent;
 public class TestSocket implements GInterface {
     private JPanel panel1;
     private JButton button1;
-    private JTextField Name;
+    private JTextField Command;
     private JTabbedPane tabbedPane1;
+    private JTextArea result;
 
     public TestSocket() {
         button1.addMouseListener(new MouseAdapter() {
@@ -19,7 +20,7 @@ public class TestSocket implements GInterface {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 Thread serverThread = new Thread(() -> {
-                    ClientSocket.SendhelloToServer(Name.getText());
+                    result.setText(ClientSocket.SendCommand(Command.getText()));
                 });
                 serverThread.start();
             }
