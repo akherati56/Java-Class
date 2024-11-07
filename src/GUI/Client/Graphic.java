@@ -1,10 +1,12 @@
 package GUI.Client;
 
+import GUI.Client.Interface.GInterface;
 import GUI.Client.Session1.TestSocket;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class Graphic {
 
@@ -13,7 +15,7 @@ public class Graphic {
     private JPanel panel1;
     private JButton sendMessageToServerButton;
     private JFrame frame;
-    private JFrame window;
+    private ArrayList<JFrame> window;
 
     public Graphic(int width, int height) {
         this.width = width;
@@ -26,17 +28,19 @@ public class Graphic {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-
                 TestSocket exerciseWindow = new TestSocket();
-
-                window = new JFrame();
-                window.setContentPane(exerciseWindow.getMainPanel());
-                window.setLocationRelativeTo(null);
-                window.pack();
-                window.setVisible(true);
-
+                NewWindow(exerciseWindow);
             }
         });
+    }
+
+    public JFrame NewWindow(GInterface gInterface){
+        JFrame window = new JFrame();
+        window.setContentPane(gInterface.getMainPanel());
+        window.setLocationRelativeTo(null);
+        window.pack();
+        window.setVisible(true);
+        return window;
     }
 
     public void init(){
