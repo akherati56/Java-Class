@@ -19,4 +19,14 @@ Decimal (Fixed-Point) Types
     
     avoiding issues with floating-point inaccuracies.
 
+----
 
+### so far i have no clear plan on how to complete this code but at the end i hope i can achive this goals:
+
+#### i may need to design uml for whole project for better management.
+## TODO:
+
+    1. implement thread for multiprocessing with best practise
+    2. implement pretty gui window for clients to input data
+    3. create connection to server with socket programming
+    4. interact with sqlite database on server
