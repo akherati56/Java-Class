@@ -31,3 +31,10 @@ Decimal (Fixed-Point) Types
     2. implement pretty gui window for clients to input data
     3. create connection to server with socket programming
     4. interact with sqlite database on server
+
+## Extra hard TODO: 
+
+    1. upload code into my vps
+    2. use public-private key for secure connection
+        
+        2.2 if it was possible implement public-private key code
