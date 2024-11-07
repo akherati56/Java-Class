@@ -37,3 +37,25 @@ Decimal (Fixed-Point) Types
     1. upload code into my vps
     2. use public-private key for secure connection
         2.2 if it was possible implement public-private key code
+
+----
+
+## Preview Result - just Socket and GUI
+
+## Form view
+![](Pics/GUI_Socket/1.png)
+
+## Run Server
+![](Pics/GUI_Socket/2.png)
+
+## Run Client
+![](Pics/GUI_Socket/3.png)
+
+## Open Sub Window
+![](Pics/GUI_Socket/4.png)
+
+## Send Name to Server 
+![](Pics/GUI_Socket/5.png)
+
+## Result on Server
+![](Pics/GUI_Socket/6.png)
