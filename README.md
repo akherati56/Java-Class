@@ -20,6 +20,7 @@ Decimal (Fixed-Point) Types
     avoiding issues with floating-point inaccuracies.
 
 ----
+## Session 2
 
 ### so far i have no clear plan on how to complete this code but at the end i hope i can achive this goals:
 
