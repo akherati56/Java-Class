@@ -24,4 +24,10 @@ public class Myprintln {
         }
         println("\n");
     }
+
+    public static void println(int[] array){
+        for (int anInt : array) {
+            System.out.print(anInt + " ");
+        }
+    }
 }

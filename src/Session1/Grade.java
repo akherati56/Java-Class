@@ -1,6 +1,13 @@
 package Session1;
 
+import lib.Myprintln;
+
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Grade {
+
+    private int[] grades;
     public String convert_grades(int grade){
         if (grade > 100 | grade < 0) {
             throw new IllegalArgumentException("Invalid grade");
@@ -15,4 +22,29 @@ public class Grade {
             default -> "F";
         };
     }
+
+    public Grade(){
+        // pass
+    }
+
+    public Grade(int[] grades){
+        this.grades = grades;
+    }
+
+    public int[] sort() {
+        Arrays.sort(grades);
+        return grades;
+    }
+
+    public int max(){
+        int max = grades[0];
+        for (int grade : grades) {
+            if (max < grade) {
+                max = grade;
+            }
+        }
+        return max;
+    }
+
+
 }
