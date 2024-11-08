@@ -24,6 +24,14 @@ public class Sqlite {
                     stmt.execute(sql);
                     System.out.println("Table created successfully.");
                 }
+
+                sql = "INSERT INTO students (name, age)\n" +
+                        "VALUES ('Alice', 30);";
+
+                try (Statement stmt = conn.createStatement()) {
+                    stmt.execute(sql);
+                    System.out.println("Data Inserted successfully.");
+                }
             }
         } catch (SQLException e) {
             System.out.println("Connection failed: " + e.getMessage());
