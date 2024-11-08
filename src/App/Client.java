@@ -6,7 +6,7 @@ public class Client {
     private static Graphic g;
     private final int width = 400, height = 300;
 
-    public Client(){
+    public Client() {
         Thread graphicThread = new Thread(() -> {
             g = new Graphic(width, height);
         });

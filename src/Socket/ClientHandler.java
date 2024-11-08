@@ -19,8 +19,7 @@ class ClientHandler extends Thread {
     }
 
     public void run() {
-        try (BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-             PrintWriter output = new PrintWriter(socket.getOutputStream(), true)) {
+        try (BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream())); PrintWriter output = new PrintWriter(socket.getOutputStream(), true)) {
 
             String command;
             while ((command = input.readLine()) != null) {

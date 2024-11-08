@@ -1,3 +1,6 @@
+# status: stop
+## working on MVC design pattern to reimplement whole project!
+
 ## session 1
 ### list of websites to download jdk 
 1. openjdk
