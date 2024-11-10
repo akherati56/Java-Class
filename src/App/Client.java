@@ -1,14 +1,14 @@
 package App;
 
-import GUI.Client.Graphic;
+import Interface.MGraphic;
+import View.Client.Desktop;
 
 public class Client {
-    private static Graphic g;
-    private final int width = 400, height = 300;
+    private static MGraphic g;
 
     public Client() {
         Thread graphicThread = new Thread(() -> {
-            g = new Graphic(width, height);
+            g = new Desktop();
         });
         graphicThread.start();
     }

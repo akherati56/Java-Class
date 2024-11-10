@@ -1,14 +1,14 @@
 package Tasks;
 
-import Session2.DuplicateDetector;
-import lib.Myprintln;
+import Service.Session2.DuplicateDetectorService;
+import Vendor.Myprintln;
 
 import java.util.ArrayList;
 
 public class DuplicateDetectorTask implements Runnable{
     @Override
     public void run() {
-        DuplicateDetector d = new DuplicateDetector();
+        DuplicateDetectorService d = new DuplicateDetectorService();
         ArrayList<String> duplicateStrings = d.findDuplicateStrings();
         Myprintln.println(duplicateStrings);
     }

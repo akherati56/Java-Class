@@ -1,15 +1,14 @@
 package Socket;
 
-import Session1.ArrowSwitch;
-import Session1.BankAccount;
-import lib.Myprintln;
+import Service.Session1.ArrowSwitchService;
+import Service.Session1.BankAccountService;
+import Vendor.Myprintln;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.time.LocalDateTime;
 
 class ClientHandler extends Thread {
     private final Socket socket;
@@ -43,10 +42,10 @@ class ClientHandler extends Thread {
     private String processCommand(String command) {
         switch (command.toUpperCase()) {
             case "ARROWSWITCH":
-                ArrowSwitch As = new ArrowSwitch();
+                ArrowSwitchService As = new ArrowSwitchService();
                 return As.detect_gender("ali");
             case "BANKACCOUNT":
-                BankAccount bk = new BankAccount(5660.0);
+                BankAccountService bk = new BankAccountService(5660.0);
                 bk.deposit(25.5);
                 bk.withdraw(25.5);
                 Myprintln.println(bk.info());
