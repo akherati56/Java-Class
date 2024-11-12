@@ -6,11 +6,15 @@ import Service.Session1.StudentService;
 import Service.Session1.MatrixService;
 import Service.Session2.*;
 import Service.Session3.BankAccount;
+import Service.Session4.DataBase.DataBase;
+import Service.Session4.DataBase.SingletonDB;
+import Service.Session4.File.Exceptions.CantOpenFileException;
+import Service.Session4.File.FileUtility;
+import Service.Session4.Serialize.User;
 import Tasks.DuplicateDetectorTask;
 import Vendor.Myprintln;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
 
@@ -158,7 +162,33 @@ public class Main {
         filteredAccounts.forEach(System.out::println);
     }
 
-    public static void main(String[] args) {
+    public static void session_4() throws CantOpenFileException {
+
+        // normal database
+        DataBase db = new DataBase();
+        db = db.CreateDB();
+        System.out.println("Database instance " + db.testconnection());
+
+        // singleton
+        db = SingletonDB.getInstance();
+        System.out.println("Singleton instance " + db.testconnection());
+
+
+        // file exceptions
+        FileUtility fu = new FileUtility();
+        fu.write("file.txt", Arrays.asList("line 1", "line 2", "line 3"));
+        fu.read("file.txt");
+
+        // serialize
+        User u = new User("126afsdfsd564", "45687985423456", "ali");
+        u.serialize();
+        System.out.println(u.toString());
+        u = u.deserialize();
+        System.out.println(u.toString()); // test serialize process!
+
+    }
+
+    public static void main(String[] args) throws CantOpenFileException {
 //        session_1();
 
 //        session_2();
@@ -180,6 +210,10 @@ public class Main {
 //        Myprintln.println( g.max());
 
 
-        session_3();
+//        session_3();
+
+        session_4();
+
+
     }
 }

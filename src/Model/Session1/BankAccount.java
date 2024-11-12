@@ -1,8 +1,9 @@
 package Model.Session1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class BankAccount {
+public class BankAccount implements Serializable {
 
     private double balance;
     private String Branch;
